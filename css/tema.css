@@ -1,0 +1,21 @@
+.panel-default{
+  border-color: #E00B23;
+}
+
+.panel-default>.panel-heading {
+  background-color: #FEC100;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+  color: #FFC500;
+  background-color: #DF0B23;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #DF0024;
+}
+
+.navbar-default {
+  background-color: #FFC500;
+  border-color: #E00623;
+}
