@@ -3,6 +3,14 @@ h1, h2{
   text-shadow: 0px 1px 1px #555 ;
 }
 
+.jumbotron, .panel {
+  background-color: #fffebe;
+}
+
+.jumbotron {
+  border-style: solid;
+  border-width: 1px;
+}
 .jumbotron, .panel-default{
   border-color: #E0001F;
 }
@@ -10,6 +18,10 @@ h1, h2{
 .panel-default>.panel-heading {
   background-color: #FEC100;
   color: #E0001F;
+}
+
+.list-group-item {
+  background-color: rgba(255,255,255,0.7);
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
