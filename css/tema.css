@@ -1,21 +1,27 @@
-.panel-default{
-  border-color: #E00B23;
+h1, h2{
+  color: #E0001F;
+  text-shadow: 0px 1px 1px #555 ;
+}
+
+.jumbotron, .panel-default{
+  border-color: #E0001F;
 }
 
 .panel-default>.panel-heading {
   background-color: #FEC100;
+  color: #E0001F;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
   color: #FFC500;
-  background-color: #DF0B23;
+  background-color: #E0001F;
 }
 
 .navbar-default .navbar-nav>li>a {
-  color: #DF0024;
+  color: #E0001F;
 }
 
 .navbar-default {
   background-color: #FFC500;
-  border-color: #E00623;
+  border-color: #E0001F;
 }
