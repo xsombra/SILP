@@ -26,6 +26,12 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+    #map {
+      width: 100%;
+      height: 400px;
+    }
+    </style>
   </head>
 
   <body>
@@ -104,6 +110,7 @@
         <address>Estamos ubicados en Boulevard Costero Miguel de la Madrid, Fondeport, 28876 Manzanillo, Colima.<br>
         Esperamos tu llamada al teléfono 313-555-555</address>
         <address>{Nombre de contacto} <a href="mail:contacto@mail.com">contacto@mail.com</a></address>
+        <div id="map"></div>
       </div>
     </div>
 
@@ -117,5 +124,43 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+          center: new google.maps.LatLng(19.1039963,-104.3342412),
+          zoom: 17,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+
+        var contentString = '<div id="content">'+
+        '<div id="siteNotice">'+'</div>'+
+        '<h1 id="firstHeading" class="firstHeading">S.I. Logística and Produce</h1>'+
+        '<div id="bodyContent">'+
+        '<div style="float:left"><img src="img/logo-simple.png" style="width:3em;margin:4px" alt="Logo Logística and Produce" /></div>'+
+        '<p> Somos una empresa dedicada dar respuesta a las necesidades aduanales de las empresas importadoras y exportadoras, integrando todos los servicios necesarios para acelerar el desarrollo económico de nuestros clientes y de la sociedad.</p>'+
+        '<p>Boulevard Costero Miguel de la Madrid, Fondeport, 28876 Manzanillo, Colima.Teléfono 313-555-555</p>'+
+        '</div>'+
+        '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+          position: mapOptions.center,
+          //icon: 'favicon.ico'
+          map: map,
+        });
+
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
   </body>
 </html>
