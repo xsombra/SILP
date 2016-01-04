@@ -34,20 +34,27 @@ h1, h2{
   background-color: rgba(255,255,255,0.7);
 }
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+.navbar {
+  background-color: #FFC500;
+  border-color: #E0001F;
+}
+
+.navbar .navbar-nav>li>a {
+  color: #E0001F;
+}
+
+.navbar .navbar-nav>.active>a, .navbar .navbar-nav>.active>a:focus{
   color: #FFC500;
   background-color: #E0001F;
 }
 
-.navbar-default .navbar-collapse, .navbar-default .navbar-form{
-  border-color: #E0001F;
+.navbar .navbar-nav>.active>a:hover,
+.navbar .navbar-nav>li>a:hover{
+  color: #FFF;
+  background-color: #E0001F;
+  text-shadow: 1px 1px 1px black;
 }
 
-.navbar-default .navbar-nav>li>a {
-  color: #E0001F;
-}
-
-.navbar-default {
-  background-color: #FFC500;
+.navbar .navbar-collapse, .navbar .navbar-form{
   border-color: #E0001F;
 }
