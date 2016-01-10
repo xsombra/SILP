@@ -107,7 +107,7 @@
           <h1 id="contacto"><span class="glyphicon glyphicon-comment"></span> Contacto</h1>
         </div>
         <div class="panel-body">
-        <address>Estamos ubicados en Boulevard Costero Miguel de la Madrid, Fondeport, 28876 Manzanillo, Colima.<br>
+        <address>Estamos ubicados en Boulevard Costero Miguel de la Madrid 426, colonia Tapeixtles, C.P. 28239, Manzanillo, Colima.<br>
         Esperamos tu llamada al teléfono 313-555-555</address>
         <address>{Nombre de contacto} <a href="mail:contacto@mail.com">contacto@mail.com</a></address>
         <div id="map"></div>
@@ -128,8 +128,9 @@
     <script>
       function initialize() {
         var mapCanvas = document.getElementById('map');
+        var lugar = new google.maps.LatLng(19.080476,-104.2885523);
         var mapOptions = {
-          center: new google.maps.LatLng(19.1039963,-104.3342412),
+          center: lugar,
           zoom: 17,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
@@ -143,7 +144,7 @@
         '<div id="bodyContent">'+
 
         '<p> Somos una empresa dedicada dar respuesta a las necesidades aduanales de las empresas importadoras y exportadoras, integrando todos los servicios necesarios para acelerar el desarrollo económico de nuestros clientes y de la sociedad.</p>'+
-        '<p>Boulevard Costero Miguel de la Madrid, Fondeport, 28876 Manzanillo, Colima.Teléfono 313-555-555</p>'+
+        '<p>Boulevard Costero Miguel de la Madrid 426, colonia Tapeixtles, C.P. 28239, Manzanillo, Colima.Teléfono 313-555-555</p>'+
         '</div>'+
         '</div>';
 
