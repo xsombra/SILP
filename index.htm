@@ -125,11 +125,11 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script>
-      function initialize() {
+      function initMap() {
         var mapCanvas = document.getElementById('map');
-        var lugar = new google.maps.LatLng(19.080476,-104.2885523);
+        var view_pos = new google.maps.LatLng(19.0806250,-104.2883873);
+        var lugar = new google.maps.LatLng(19.0807250,-104.2883873);
         var mapOptions = {
           center: lugar,
           zoom: 17,
@@ -149,34 +149,54 @@
         '</div>'+
         '</div>';
 
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
+        var infowindow = new google.maps.InfoWindow({content: contentString});
 
         var marker = new google.maps.Marker({
-          position: mapOptions.center,
-          //icon: 'favicon.ico'
           map: map,
+          position: mapOptions.center,
+          place: {
+            location: mapOptions.center,
+            query: 'Aduana, Colima, Mexico'
+          },
+          attribution:{
+            source: "S.I. Logística and Produce S.A de C.V.",
+            webUrl: "http://www.logisticaandproduce.com.mx"
+          }
+          //icon: 'favicon.ico',
         });
 
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
-        });
+        var infowindow_listener = function() {
+          if (infowindow.x_open != true) {
+            infowindow.x_open = true;
+            infowindow.open(map, marker);
+          }else{
+            infowindow.x_open = false;
+            infowindow.close();
+          }
+        };
+
+        marker.addListener('click', infowindow_listener);
 
         /*Street view*/
         var sv_canvas = document.getElementById('streetview');
         var panorama = new google.maps.StreetViewPanorama(
           sv_canvas, {
-            position: lugar,
+            position: view_pos,
             pov: {
               heading: 34,
               pitch: 10
             }
           });
+        var sv_marker = new google.maps.Marker({
+          position: mapOptions.center,
+          //icon: 'favicon.ico',
+          map: panorama
+        });
+        sv_marker.addListener('click', infowindow_listener);
 
         map.setStreetView(panorama);
       }
-      google.maps.event.addDomListener(window, 'load', initialize);
     </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap&signed_in=true"></script>
   </body>
 </html>
